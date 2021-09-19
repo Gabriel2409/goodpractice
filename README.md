@@ -97,6 +97,50 @@ Usage
 
 -vscode : no settings.json but good extension : Python Docstring Generator
 
+## Pre-commit
+
+- create a config file : .pre-commit-config.yaml
+
+```
+repos:
+  - repo: https://github.com/psf/black
+    rev: 21.8b0
+    hooks:
+      - id: black
+        name: black
+        description: 'Black: The uncompromising Python code formatter'
+        entry: black
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        name: flake8
+        description: 'Enforce style consistency'
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.9.3
+    hooks:
+      - id: isort
+        name: isort
+        description: 'Sort your imports'
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.5.0
+    hooks:
+      - id: interrogate
+        name: interrogate
+        description: 'Checks code base for missing docstrings'
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1 # Use the ref you want to point at
+    hooks:
+      - id: check-added-large-files
+        description: Prevents commit of files > 1 MB
+        args: ['--maxkb=1000']
+
+```
+
+- test it : `pre-commit run --all-files`
+
+- install it so that it is launched before every commit : `pre-commit install`
+
 # Creation of package (src folder)
 
 # Basic api
