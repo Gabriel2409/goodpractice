@@ -1,7 +1,8 @@
 #%%
-import pandas as pd
-import numpy as np
 from collections import Counter
+
+import numpy as np
+import pandas as pd
 
 
 def count_a_in_string(mystring):

@@ -27,6 +27,17 @@ in your settings.json
 "editor.formatOnSave": true
 ```
 
+### isort : sort import
+
+- command line : `isort <filename>`
+- Bonus : vscode :
+
+```json
+"editor.codeActionsOnSave": {
+	"source.organizeImports": true
+}
+```
+
 # Creation of package (src folder)
 
 # Basic api
