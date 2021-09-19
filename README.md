@@ -1,12 +1,14 @@
 # Good practices for a new repo
 
-# Virtual environment
+## Virtual environment
 - `python3 -m venv venv`
 - `source venv/bin/activate`
 - `pip install --upgrade pip`
 
+## Requirementts
+- Create a requirements.txt file and add the necessary packages in it
 
-# Installation of local tools
+
 
 # Creation of package (src folder)
 
