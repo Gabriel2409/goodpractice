@@ -1,7 +1,6 @@
 #%%
 from collections import Counter
 
-import numpy as np
 import pandas as pd
 
 
@@ -13,7 +12,8 @@ def convert_df_to_unique_string(df):
     return df.astype(str).sum().sum()
 
 
-# good practice in your scrip files. Define a main function and use if __name__ == "__main__"
+# good practice in your scrip files. Define a main function and use
+# if __name__ == "__main__"
 def main():
     mystr = "Good practices for a python repo."
     nb_a = count_a_in_string(mystr)

@@ -38,6 +38,26 @@ in your settings.json
 }
 ```
 
+### flake8 : python linting and problems
+
+Configuration : create a .flake8 file :
+
+```
+[flake8]
+max-line-length = 88
+extend-ignore = E203, E265
+exclude = .git,__pycache__,old,build,dist,venv
+```
+
+Notes
+
+- max-line-length 88 and E203 (whitespace before ':') to avoid conflicts with black
+- E265 block comment should start with '# ' confilcts with vscode interactive windows where some lines are just #%%
+
+Usage
+
+- command line : `flake8 <filename>`
+
 # Creation of package (src folder)
 
 # Basic api
