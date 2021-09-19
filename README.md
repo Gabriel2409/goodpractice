@@ -58,6 +58,45 @@ Usage
 
 - command line : `flake8 <filename>`
 
+-vscode :
+
+```json
+"python.linting.flake8Enabled": true
+```
+
+### interrogate : check docstrings
+
+Configuration : in the pytproject.toml file:
+
+```
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = true
+ignore-magic = false
+ignore-semiprivate = false
+ignore-private = false
+ignore-property-decorators = false
+ignore-module = true
+ignore-nested-functions = false
+ignore-nested-classes = true
+ignore-setters = false
+fail-under = 80
+exclude = ["setup.py", "docs", "build", "venv"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+# possible values: 0 (minimal output), 1 (-v), 2 (-vv)
+verbose = 2
+quiet = false
+whitelist-regex = []
+color = true
+omit-covered-files = false
+```
+
+Usage
+
+- command line : `interrogate <filename> -vv`
+
+-vscode : no settings.json but good extension : Python Docstring Generator
+
 # Creation of package (src folder)
 
 # Basic api
