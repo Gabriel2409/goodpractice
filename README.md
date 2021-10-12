@@ -144,3 +144,20 @@ repos:
 # Creation of package (src folder)
 
 # Basic api
+
+## Backend
+
+- Backend is made in fastapi
+- Testing is done with pytest
+
+### Run in dev mode
+
+- In the backend directory : `uvicorn app.main:app --reload`
+- go to http://localhost:8000
+- documentation can be found on the /docs route
+
+### Testing
+
+- units test: `pytest`
+- code coverage: `pytest --cov="."`
+- code coverage html version: `pytest --cov="." --cov-report html`
