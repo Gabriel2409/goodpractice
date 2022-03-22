@@ -2,6 +2,8 @@
 
 ## Virtual environment
 
+Note : install pyenv : https://medium.com/geekculture/how-to-install-and-manage-multiple-python-versions-in-wsl2-6d6ce1b6f55b
+
 - `python3 -m venv venv`
 - `source venv/bin/activate`
 - `pip install --upgrade pip`
