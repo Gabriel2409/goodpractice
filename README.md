@@ -41,8 +41,7 @@ https://github.com/PyCQA/isort
 
 ```json
 "editor.codeActionsOnSave": {
-	 // "source.organizeImports": true // will delete unused imports
-	"source.sortImports": true // will only sort
+	 "source.organizeImports": true
 }
 ```
 
@@ -52,6 +51,24 @@ in the pyproject.toml file:
 [tool.isort]
 profile = "black"
 
+```
+
+Note: if you use multiple languages. In settings.json, organizeImports behavior is not consistent
+
+```json
+{
+	"[python]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true // sort imports (no deletion of unused)
+		}
+	},
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.sortImports": true // sort imports
+			// "source.organizeImports": true // sort imports, delete unused
+		}
+	}
+}
 ```
 
 ### flake8 : python linting and problems
