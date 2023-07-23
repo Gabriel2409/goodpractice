@@ -14,7 +14,7 @@ def test_hello(test_app: TestClient):
     # test_app
 
     # When
-    response = test_app.get("/hello")
+    response = test_app.get("/")
 
     # Then
     assert response.status_code == 200, "Wrong status code"
@@ -22,6 +22,7 @@ def test_hello(test_app: TestClient):
         "Hello": "World",
         "environment": "dev",
         "testing": True,
+        "secret": "test_secret",
     }
 
 
@@ -57,6 +58,7 @@ def test_hello_download(test_app: TestClient):
     Args:
         test_app (TestClient): the test client
     """
+
     response = test_app.get("/hello-download")
 
     assert response.status_code == 200
