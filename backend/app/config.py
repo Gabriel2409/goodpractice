@@ -4,7 +4,7 @@ import pathlib
 from functools import lru_cache
 
 import app
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 log = logging.getLogger("uvicorn")
 
@@ -17,8 +17,7 @@ class Settings(BaseSettings):
     uploads_folder: str = str(pathlib.Path(app.__file__).parent / "uploads")
     secret: str = os.getenv("MYSECRET", "secret")
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env")
 
 
 @lru_cache()

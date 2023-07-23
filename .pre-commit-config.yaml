@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/psf/black
-    rev: 22.1.0
+    rev: 23.7.0
     hooks:
       - id: black
         name: black
@@ -8,15 +8,15 @@ repos:
         description: 'Black: The uncompromising Python code formatter'
         entry: black
         # args: ['--check']
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 4.0.1
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
     hooks:
       - id: flake8
         name: flake8
         exclude: (dist|json|data|data_format)/
         description: 'Enforce style consistency'
   - repo: https://github.com/timothycrosley/isort
-    rev: 5.10.1
+    rev: 5.12.0
     hooks:
       - id: isort
         name: isort
@@ -32,9 +32,9 @@ repos:
         exclude: (dist|json|data|data_format)/
         description: 'Checks code base for missing docstrings'
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0 # Use the ref you want to point at
+    rev: v4.4.0 # Use the ref you want to point at
     hooks:
       - id: check-added-large-files
-        description: Prevents commit of files > 1 MB
-        args: ['--maxkb=1000']
+        description: Prevents commit of files > 2 MB
+        args: ['--maxkb=2000']
       - id: trailing-whitespace

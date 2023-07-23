@@ -11,7 +11,7 @@ from fastapi.responses import FileResponse, StreamingResponse
 router = APIRouter()
 
 
-@router.get("/hello")
+@router.get("/")
 async def hello(settings: Settings = Depends(get_settings)):
     """Basic route to check that everything works
 
@@ -26,6 +26,7 @@ async def hello(settings: Settings = Depends(get_settings)):
         "Hello": "World",
         "environment": settings.environment,
         "testing": settings.testing,
+        "secret": settings.secret,
     }
 
 
